@@ -1,0 +1,9 @@
+- name: download rebar from git
+  git: repo=git://github.com/rebar/rebar.git dest={{ rebar_install_dir }} accept_hostkey=yes version={{ rebar_version }}
+
+- name: run bootstrap
+  shell: ./bootstrap chdir={{ rebar_install_dir }} creates={{ rebar_install_dir }}/rebar
+
+- name: link rebar binary
+  sudo: true
+  command: /bin/ln -s {{ rebar_install_dir }}/rebar /usr/local/bin/rebar creates=/usr/local/bin/rebar

@@ -1,0 +1,11 @@
+- name: download couchdb from git
+  git: repo=https://git-wip-us.apache.org/repos/asf/couchdb.git dest={{ couchdb_install_dir }} accept_hostkey=yes 
+
+- name: Install grunt globally
+  npm: name=grunt-cli global=yes
+
+- name: run configure
+  shell: ./configure chdir={{ couchdb_install_dir }}
+
+- name: run make
+  shell: make chdir={{ couchdb_install_dir }}

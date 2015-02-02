@@ -1,0 +1,17 @@
+---
+- hosts: all
+  remote_user: pi
+  sudo: yes
+  vars:
+    nodejs_version: 0.10.28
+    nodejs_install_dir: /home/pi/nodejs
+    rebar_version: 2.5.1
+    rebar_install_dir: /home/pi/rebar
+    couchdb_install_dir: /home/pi/couchdb
+
+  tasks:
+    - include: tasks/install-erlang.yml
+    - include: tasks/install-nodejs.yml
+    - include: tasks/install-rebar.yml
+    - include: tasks/install-couchdb.yml
+
