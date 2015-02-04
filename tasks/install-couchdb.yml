@@ -3,6 +3,7 @@
 
 - name: Install grunt globally
   npm: name=grunt-cli global=yes
+  sudo: yes
 
 - name: run configure
   shell: ./configure chdir={{ couchdb_install_dir }}
