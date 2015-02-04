@@ -1,27 +1,36 @@
 
 - name: Add Erlang repository key
   apt_key: url=http://packages.erlang-solutions.com/debian/erlang_solutions.asc state=present
+  sudo: yes
 
 - name: Add Erlang repository
   apt_repository: repo="deb http://packages.erlang-solutions.com/debian wheezy contrib" state=present
+  sudo: yes
 
 - name: Update apt cache
   apt: update_cache=yes
+  sudo: yes
   
 - name: Install erlang-nox
   apt: name=erlang-nox state=present
+  sudo: yes
   
 - name: Install erlang-dev
-  apt: name=erlang-dev state=present  
+  apt: name=erlang-dev state=present 
+  sudo: yes 
   
 - name: Install libmozjs185-1.0
   apt: name=libmozjs185-1.0 state=present  
+  sudo: yes
    
 - name: Install libmozjs185-dev
   apt: name=libmozjs185-dev state=present  
+  sudo: yes
   
 - name: Install libcurl4-openssl-dev
   apt: name=libcurl4-openssl-dev state=present  
+  sudo: yes
    
 - name: Install libicu-dev
   apt: name=libicu-dev state=present  
+  sudo: yes

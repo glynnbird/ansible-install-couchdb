@@ -4,13 +4,12 @@
     dest=/tmp/node-{{ nodejs_version }}.tar.gz
 
 - name: create install directory
-  sudo: true
   file: >
     path={{ nodejs_install_dir }}
     state=directory
     mode=0755
+
 - name: install
-  sudo: true
   command: /bin/tar xvzf /tmp/node-{{ nodejs_version }}.tar.gz -C {{ nodejs_install_dir }} --strip 1
     creates={{ nodejs_install_dir }}/bin/node
 
