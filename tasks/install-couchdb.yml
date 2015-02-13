@@ -1,5 +1,5 @@
 - name: download couchdb from git
-  git: repo=https://git-wip-us.apache.org/repos/asf/couchdb.git dest={{ couchdb_install_dir }} accept_hostkey=yes 
+  git: repo=https://git-wip-us.apache.org/repos/asf/couchdb.git dest={{ couchdb_install_dir }} accept_hostkey=yes version=c28eadc025120b833db5526f142742f548a27d81
 
 - name: Install grunt globally
   npm: name=grunt-cli global=yes
