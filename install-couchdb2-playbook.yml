@@ -8,6 +8,7 @@
     nodejs_install_dir: /home/pi/nodejs
     rebar_version: 2.5.1
     rebar_install_dir: /home/pi/rebar
+    couchdb_version: developer-preview-2.0
     couchdb_install_dir: /home/pi/couchdb
 
   tasks:
